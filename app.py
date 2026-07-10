@@ -13,6 +13,8 @@ Local test:
 
 from fastapi import FastAPI
 
+from weather import get_weather_summary
+
 app = FastAPI()
 
 
@@ -32,8 +34,9 @@ def build_briefing() -> str:
 
     parts.append("Hello Scott.")
 
+    parts.append(get_weather_summary())
+
     # --- future modules go here, e.g. ---
-    # parts.append(get_weather_summary())
     # parts.append(get_calendar_summary())
     # parts.append(get_bills_due_summary())
 
